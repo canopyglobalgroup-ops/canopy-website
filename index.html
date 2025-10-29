@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canopy Group - Innovation Platform for Economic & Environmental Sustainability</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i> Canopy Group
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">Practice Areas <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="school-career.html">School & Career</a></li>
+                        <li><a href="diaspora-investment.html">Diaspora Investment</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="economy.html">Economy</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Catalyzing a Sustainable, Digitally-Enabled Global Economy</h1>
+            <p>We are a consulting firm driving social transformation, economic prosperity, and environmental resilience for communities and future generations.</p>
+            <div class="cta-group">
+                <a href="#practices" class="cta-button primary">Explore Our Consulting Practices</a>
+                <a href="#thought-leadership" class="cta-button secondary">View Our Thought Leadership</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Canopy Group</h2>
+            
+            <!-- Our Mission and Vision -->
+            <div class="about-section">
+                <h3>Our Mission and Vision</h3>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p><strong>Core Purpose:</strong> Canopy Group is a consulting firm passionate about economic and environmental sustainability, the resilience of communities and individuals, and the creation of prosperity for future generations.</p>
+                        <p><strong>How We Work:</strong> We engage with current topics, historic perspectives, and technological innovations to contribute to social transformation and world progress.</p>
+                        <div class="pillars">
+                            <h4>The Three Pillars of Our Action:</h4>
+                            <div class="pillars-grid">
+                                <div class="pillar">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <h5>Technological Innovation</h5>
+                                    <p>Driving transformation through cutting-edge technologies</p>
+                                </div>
+                                <div class="pillar">
+                                    <i class="fas fa-handshake"></i>
+                                    <h5>Facilitating Investment</h5>
+                                    <p>Enabling discussion and deployment of capital</p>
+                                </div>
+                                <div class="pillar">
+                                    <i class="fas fa-network-wired"></i>
+                                    <h5>Stakeholder Collaboration</h5>
+                                    <p>Building partnerships across sectors and nations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Approach to Transformation -->
+            <div class="about-section">
+                <h3>Our Approach to Transformation</h3>
+                <div class="approach-grid">
+                    <div class="approach-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>Thought Leadership</h4>
+                        <p>We aim to be a premier source of thought leadership, facilitating open discussion that empowers world leaders and enables equitable prosperity.</p>
+                    </div>
+                    <div class="approach-card">
+                        <i class="fas fa-globe"></i>
+                        <h4>Global Transformation</h4>
+                        <p>As the world transforms from informal to digitally-enabled formal economies, we help enable equitable prosperity and integrated service and manufacturing ecosystems.</p>
+                    </div>
+                    <div class="approach-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <h4>Data-Driven Solutions</h4>
+                        <p>In coordination with international institutions, academia, and business leaders, we leverage data and technology to provide actionable steps addressing societal challenges.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Canopy Difference -->
+            <div class="about-section">
+                <h3>The Canopy Difference</h3>
+                <div class="difference-content">
+                    <div class="difference-box">
+                        <h4>Our Methodology</h4>
+                        <p>Our consulting efforts are based on extensive research, creative strategies, factual data, and proven records of past success. We collect data, analyze information, and provide recommendations that empower leaders to make informed decisions with positive societal impact.</p>
+                    </div>
+                    <div class="difference-quote">
+                        <blockquote>
+                            <p>"If you want to go fast, go alone; but if you want to go far, go together."</p>
+                            <footer>— African Proverb</footer>
+                        </blockquote>
+                        <p class="quote-context">This principle guides our belief in collaborative partnerships as the foundation for sustainable, equitable, and lasting prosperity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Focus Areas -->
+    <section class="focus-areas">
+        <div class="container">
+            <h2>Our Focus Areas</h2>
+            <div class="focus-grid">
+                <div class="focus-card" onclick="document.getElementById('school-career-section').scrollIntoView({ behavior: 'smooth' })" style="cursor: pointer;">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>School & Career</h3>
+                </div>
+                <div class="focus-card" onclick="document.getElementById('diaspora-section').scrollIntoView({ behavior: 'smooth' })" style="cursor: pointer;">
+                    <i class="fas fa-globe"></i>
+                    <h3>African Diaspora Investment</h3>
+                </div>
+                <div class="focus-card" onclick="document.getElementById('technology-section').scrollIntoView({ behavior: 'smooth' })" style="cursor: pointer;">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Technology</h3>
+                </div>
+                <div class="focus-card" onclick="document.getElementById('economy-section').scrollIntoView({ behavior: 'smooth' })" style="cursor: pointer;">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Economy</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practices Section -->
+    <section id="practices" class="practices">
+        <div class="container">
+            <h2>Our Consulting Practices</h2>
+
+            <!-- School & Career Practice -->
+            <div class="practice-section" id="school-career-section">
+                <div class="practice-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>School & Career Development</h3>
+                </div>
+                <p>Bridging the gap between the classroom and corporate world through small group discussions, conferences, and networking activities.</p>
+                <div class="practice-areas">
+                    <div class="area-item">
+                        <h4>University System</h4>
+                        <p>Providing long-distance courses and supporting universities with industry resources</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Jobs & Career Placement</h4>
+                        <p>Connecting candidates with government, NGO, and private company opportunities</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Professional & Practical Skills</h4>
+                        <p>2-18 month capacity building programs from classroom to job placement</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Leadership & Communication</h4>
+                        <p>In-depth discussion on leadership principles and professional development</p>
+                    </div>
+                </div>
+                <div class="certifications">
+                    <h4>Certification Programs Include:</h4>
+                    <div class="cert-grid">
+                        <span class="cert-badge">5G Fundamentals</span>
+                        <span class="cert-badge">Artificial Intelligence</span>
+                        <span class="cert-badge">Cloud & AWS</span>
+                        <span class="cert-badge">Cybersecurity</span>
+                        <span class="cert-badge">Network Administration</span>
+                        <span class="cert-badge">Infrastructure</span>
+                        <span class="cert-badge">System Administration</span>
+                        <span class="cert-badge">Automation</span>
+                    </div>
+                </div>
+                <div class="practice-cta">
+                    <a href="school-career.html" class="know-more-btn">Know More →</a>
+                </div>
+            </div>
+
+            <!-- Diaspora Investment Practice -->
+            <div class="practice-section" id="diaspora-section">
+                <div class="practice-header">
+                    <i class="fas fa-globe"></i>
+                    <h3>Diaspora Investment</h3>
+                </div>
+                <p>Empowering African diaspora to leverage technological innovation, cultural experiences, and business acumen to transform the African continent.</p>
+                <div class="practice-areas">
+                    <div class="area-item">
+                        <h4>Money Transfer Solutions</h4>
+                        <p>Streamlining remittance flows to maximize economic impact</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>SME Development</h4>
+                        <p>Supporting Small and Medium-Size Enterprises through structured investment</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Financial Instruments</h4>
+                        <p>Creating investment bonds, funds, and community banking solutions</p>
+                    </div>
+                </div>
+                <div class="investment-highlights">
+                    <p><strong>Our Approach:</strong> Through international entrepreneurship, we create, structure, execute, and manage investment solutions that enable companies and governments to access capital while providing investors with new opportunities with minimized risk exposure.</p>
+                </div>
+                <div class="practice-cta">
+                    <a href="diaspora-investment.html" class="know-more-btn">Know More →</a>
+                </div>
+            </div>
+
+            <!-- Technology Practice -->
+            <div class="practice-section" id="technology-section">
+                <div class="practice-header">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Technology Innovation</h3>
+                </div>
+                <p>Enabling organizations to navigate their digital transformation journey at every stage—from planning through implementation and management.</p>
+                <div class="practice-areas">
+                    <div class="area-item">
+                        <h4>Digitization Services</h4>
+                        <p>Hardware, Storage, Cloud, and Software solutions tailored to organizational needs</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Networking & 5G</h4>
+                        <p>Next-generation connectivity infrastructure and implementation</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Cybersecurity</h4>
+                        <p>Protecting digital assets and ensuring organizational resilience</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Blockchain & Crypto</h4>
+                        <p>Emerging technologies for economic resilience and digital transformation</p>
+                    </div>
+                </div>
+                <div class="tech-highlights">
+                    <p><strong>Strategic Vision:</strong> We help organizations and nations leapfrog expensive legacy IT infrastructure to accelerate technology implementation and enable integration with global digital economies.</p>
+                </div>
+                <div class="practice-cta">
+                    <a href="technology.html" class="know-more-btn">Know More →</a>
+                </div>
+            </div>
+
+            <!-- Economy Practice -->
+            <div class="practice-section" id="economy-section">
+                <div class="practice-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Economics & Development</h3>
+                </div>
+                <p>Supporting sustainable economic growth through data-driven analysis and strategic policy recommendations for inclusive prosperity.</p>
+                <div class="practice-areas">
+                    <div class="area-item">
+                        <h4>Economic Analysis</h4>
+                        <p>Statistics and comprehensive economic reports for informed decision-making</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Infrastructure & Financial Inclusion</h4>
+                        <p>Building foundations for sustainable economic growth and population prosperity</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Agriculture & Resources</h4>
+                        <p>Transforming natural resources into competitive economic advantages</p>
+                    </div>
+                    <div class="area-item">
+                        <h4>Foreign Investment & Trade</h4>
+                        <p>Facilitating international investment and sustainable trade relationships</p>
+                    </div>
+                </div>
+                <div class="economy-philosophy">
+                    <p><em>"If you want to go fast, go alone; but if you want to go far, go together."</em> — We believe in inclusive economic systems where wider populations participate in formal economies, leading to sustainable prosperity.</p>
+                </div>
+                <div class="practice-cta">
+                    <a href="economy.html" class="know-more-btn">Know More →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h2>Our Partners & Clients</h2>
+            <div class="partners-grid">
+                <div class="partner-card">BlueStreams Group</div>
+                <div class="partner-card">CoreHive Computing</div>
+                <div class="partner-card">Executive Consultants United</div>
+                <div class="partner-card">George Washington University</div>
+                <div class="partner-card">US-UK Africa Business Council</div>
+                <div class="partner-card">Greater Washington Black Chamber of Commerce</div>
+                <div class="partner-card">Golden Triangle BID</div>
+                <div class="partner-card">CCDL</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p><strong>Phone:</strong> +1 202-820-2790</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Email:</strong> Contact us for inquiry</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><strong>Region:</strong> North America, Asia, and Europe</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Canopy Group. All rights reserved. Committed to economic and environmental sustainability.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
