@@ -38,7 +38,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(135deg, rgba(45, 122, 106, 0.90) 0%, rgba(31, 90, 76, 0.90) 100%); padding: 60px 20px;">
+    <section class="hero school-career-hero">
+        <div class="hero-background-overlay"></div>
         <div class="container">
             <div class="hero-content">
                 <h1>School & Career Development</h1>
@@ -52,6 +53,15 @@
         <div class="container">
             <h2>Our Focus in School & Career Development</h2>
             <p class="section-intro">We work with educational institutions, governments, and organizations to create sustainable pathways for youth development and career advancement across Africa.</p>
+            
+            <!-- Impact Stat Highlight -->
+            <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(27, 163, 151, 0.08) 0%, rgba(212, 165, 116, 0.08) 100%); border-radius: 12px;">
+                <p style="font-size: 1.4rem; color: var(--primary-green); font-weight: 600; margin: 0; line-height: 1.6;">
+                    <i class="fas fa-quote-left" style="color: var(--accent-teal); margin-right: 0.5rem; font-size: 1.2rem;"></i>
+                    Over 60% of African youth are under 25 — education is the key to unlocking their potential
+                    <i class="fas fa-quote-right" style="color: var(--accent-teal); margin-left: 0.5rem; font-size: 1.2rem;"></i>
+                </p>
+            </div>
             
             <div class="detail-card" style="margin-top: 2rem;">
                 <i class="fas fa-graduation-cap"></i>
@@ -99,7 +109,12 @@
         <div class="container">
             <h2>Our Solutions</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div class="solutions-callout">
+                <i class="fas fa-link"></i>
+                <p>We provide scalable solutions that connect learning to livelihoods.</p>
+            </div>
+            
+            <div class="solutions-grid">
                 <div class="solution-card">
                     <div class="solution-icon"><i class="fas fa-cogs"></i></div>
                     <h3>Institutional Strengthening</h3>
@@ -202,19 +217,19 @@
             
             <div class="value-box" style="margin-top: 2rem;">
                 <div class="stat-item">
-                    <div class="stat-number">500+</div>
+                    <div class="stat-number counter" data-target="500">0+</div>
                     <div class="stat-label">Students Trained</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">15+</div>
+                    <div class="stat-number counter" data-target="15">0+</div>
                     <div class="stat-label">Schools & Centers</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">80%</div>
+                    <div class="stat-number counter" data-target="80">0%</div>
                     <div class="stat-label">Employment Rate</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">25+</div>
+                    <div class="stat-number counter" data-target="25">0+</div>
                     <div class="stat-label">Industry Partners</div>
                 </div>
             </div>
