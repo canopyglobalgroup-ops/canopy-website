@@ -38,7 +38,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(135deg, rgba(45, 122, 106, 0.90) 0%, rgba(31, 90, 76, 0.90) 100%); padding: 60px 20px;">
+    <section class="hero technology-hero">
+        <div class="hero-background-overlay"></div>
         <div class="container">
             <div class="hero-content">
                 <h1>Technology & Innovation</h1>
@@ -65,6 +66,15 @@
     <section class="tech-solutions-grid">
         <div class="container">
             <h2>Our Technology Solutions</h2>
+            
+            <!-- Impact Stat Highlight -->
+            <div style="text-align: center; margin: 1.5rem 0 2rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(27, 163, 151, 0.08) 0%, rgba(212, 165, 116, 0.08) 100%); border-radius: 12px;">
+                <p style="font-size: 1.25rem; color: var(--primary-green); font-weight: 600; margin: 0; line-height: 1.6;">
+                    <i class="fas fa-quote-left" style="color: var(--accent-teal); margin-right: 0.5rem; font-size: 1.1rem;"></i>
+                    Africa's tech ecosystem is projected to grow to $180 billion by 2025 — innovation is the catalyst
+                    <i class="fas fa-quote-right" style="color: var(--accent-teal); margin-left: 0.5rem; font-size: 1.1rem;"></i>
+                </p>
+            </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
                 <div class="tech-solution">
@@ -155,27 +165,78 @@
             
             <div class="program-list">
                 <div class="program-card">
-                    <h4><i class="fas fa-rocket" style="color: var(--accent-teal); margin-right: 0.5rem;"></i>Startup Acceleration</h4>
+                    <div class="program-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Startup Acceleration</h4>
                     <p class="duration"><i class="fas fa-clock"></i> 12 weeks</p>
                     <p>We provide comprehensive acceleration programs helping tech startups develop market-ready products, build teams, and access funding.</p>
                 </div>
 
                 <div class="program-card">
-                    <h4><i class="fas fa-lightbulb" style="color: var(--accent-teal); margin-right: 0.5rem;"></i>Innovation Labs</h4>
+                    <div class="program-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovation Labs</h4>
                     <p class="duration"><i class="fas fa-clock"></i> Ongoing</p>
                     <p>We facilitate collaborative innovation spaces where entrepreneurs, developers, and industry leaders co-create solutions to critical challenges.</p>
                 </div>
 
                 <div class="program-card">
-                    <h4><i class="fas fa-graduation-cap" style="color: var(--accent-teal); margin-right: 0.5rem;"></i>Tech Skills Training</h4>
+                    <div class="program-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Tech Skills Training</h4>
                     <p class="duration"><i class="fas fa-clock"></i> 8-16 weeks</p>
                     <p>We train developers and tech professionals in cutting-edge technologies, preparing them for high-demand roles in Africa's growing tech sector.</p>
                 </div>
 
                 <div class="program-card">
-                    <h4><i class="fas fa-chart-line" style="color: var(--accent-teal); margin-right: 0.5rem;"></i>Tech Investment</h4>
+                    <div class="program-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Tech Investment</h4>
                     <p class="duration"><i class="fas fa-clock"></i> Ongoing</p>
                     <p>We connect promising tech startups with investors and facilitate funding rounds, supporting the growth of Africa's technology ecosystem.</p>
+                </div>
+            </div>
+
+            <!-- Startups Carousel -->
+            <div style="margin-top: 4rem;">
+                <h3 style="text-align: center; color: var(--primary-green); margin-bottom: 2rem;">Startups We've Supported</h3>
+                <div class="tech-startups-carousel">
+                    <div class="tech-startups-track">
+                        <div class="tech-startup-card">
+                            <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: var(--accent-teal);"></i>
+                            <h5>PayTech Africa</h5>
+                            <p>Mobile Payments</p>
+                        </div>
+                        <div class="tech-startup-card">
+                            <i class="fas fa-heartbeat" style="font-size: 2.5rem; color: var(--accent-teal);"></i>
+                            <h5>HealthConnect</h5>
+                            <p>Digital Health</p>
+                        </div>
+                        <div class="tech-startup-card">
+                            <i class="fas fa-seedling" style="font-size: 2.5rem; color: var(--accent-teal);"></i>
+                            <h5>AgriTech Solutions</h5>
+                            <p>Smart Farming</p>
+                        </div>
+                        <div class="tech-startup-card">
+                            <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: var(--accent-teal);"></i>
+                            <h5>EduStream</h5>
+                            <p>EdTech Platform</p>
+                        </div>
+                        <div class="tech-startup-card">
+                            <i class="fas fa-truck" style="font-size: 2.5rem; color: var(--accent-teal);"></i>
+                            <h5>LogiFlow</h5>
+                            <p>Logistics Tech</p>
+                        </div>
+                        <div class="tech-startup-card">
+                            <i class="fas fa-bolt" style="font-size: 2.5rem; color: var(--accent-teal);"></i>
+                            <h5>PowerGrid+</h5>
+                            <p>Energy Solutions</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -247,19 +308,19 @@
             
             <div class="value-box" style="margin-top: 2rem;">
                 <div class="stat-item">
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number" data-target="50">50+</div>
                     <div class="stat-label">Startups Supported</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">$100M+</div>
+                    <div class="stat-number" data-target="100">$100M+</div>
                     <div class="stat-label">Funding Facilitated</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">1000+</div>
+                    <div class="stat-number" data-target="1000">1000+</div>
                     <div class="stat-label">Tech Professionals Trained</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">30+</div>
+                    <div class="stat-number" data-target="30">30+</div>
                     <div class="stat-label">Digital Platforms Deployed</div>
                 </div>
             </div>

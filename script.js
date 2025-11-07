@@ -13,41 +13,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Dropdown Toggle for Mobile ONLY
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    const navDropdown = document.querySelector('.nav-dropdown');
+    // Dropdown Toggle for Click (All Screen Sizes) - Handle Multiple Dropdowns
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
     
-    if (dropdownToggle && dropdownMenu) {
-        // Only add click toggle on mobile (screen width <= 768px)
-        if (window.innerWidth <= 768) {
-            dropdownToggle.addEventListener('click', function(e) {
+    if (dropdownToggles.length > 0) {
+        dropdownToggles.forEach((toggle, index) => {
+            const dropdown = navDropdowns[index];
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+            
+            // Add click toggle for all screen sizes
+            toggle.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                // Toggle the show class
-                if (dropdownMenu.classList.contains('show')) {
-                    dropdownMenu.classList.remove('show');
-                } else {
-                    dropdownMenu.classList.add('show');
-                }
+                // Close all other dropdowns
+                navDropdowns.forEach((otherDropdown, otherIndex) => {
+                    if (otherIndex !== index) {
+                        otherDropdown.classList.remove('active');
+                        otherDropdown.querySelector('.dropdown-menu').classList.remove('show');
+                    }
+                });
+                
+                // Toggle the current dropdown
+                dropdownMenu.classList.toggle('show');
+                dropdown.classList.toggle('active');
             });
+        });
 
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!navDropdown.contains(e.target)) {
-                    dropdownMenu.classList.remove('show');
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            let clickedInsideDropdown = false;
+            navDropdowns.forEach(dropdown => {
+                if (dropdown.contains(e.target)) {
+                    clickedInsideDropdown = true;
                 }
             });
-        }
+            
+            if (!clickedInsideDropdown) {
+                navDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                    dropdown.querySelector('.dropdown-menu').classList.remove('show');
+                });
+            }
+        });
 
         // Close dropdown when a menu item is clicked
         document.querySelectorAll('.dropdown-menu a').forEach(link => {
             link.addEventListener('click', function() {
-                // Close the dropdown after navigation
-                if (dropdownMenu.classList.contains('show')) {
-                    dropdownMenu.classList.remove('show');
-                }
+                // Close all dropdowns after navigation
+                navDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                    dropdown.querySelector('.dropdown-menu').classList.remove('show');
+                });
             });
         });
     }
@@ -64,20 +82,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for navigation links - SIMPLIFIED AND FIXED
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href.startsWith('#')) {
+            
+            // Skip if it's just "#" or empty
+            if (!href || href === '#') {
+                return;
+            }
+            
+            // Get the target element
+            const targetId = href.replace('#', '');
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
                 e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    const offsetTop = target.offsetTop - 70; // Account for fixed navbar
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
+                
+                // Get the target's position from top of document
+                const targetPosition = targetElement.offsetTop;
+                
+                // Subtract navbar height plus extra padding for visibility
+                const offset = 150;
+                
+                // Scroll to position
+                window.scrollTo({
+                    top: targetPosition - offset,
+                    behavior: 'smooth'
+                });
             }
         });
     });
@@ -181,15 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
-
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    });
 
     // Typing animation for hero title
     const heroTitle = document.querySelector('.hero-title');
@@ -409,6 +432,69 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+
+    // Animated Counter Function
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const text = element.textContent;
+        const prefix = text.match(/^\$/) ? '$' : '';
+        const suffix = text.match(/[MK+%]+$/) ? text.match(/[MK+%]+$/)[0] : '';
+        
+        let current = 0;
+        const increment = target / 100; // 100 steps
+        const duration = 5000; // 5 seconds
+        const stepTime = duration / 100;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            
+            element.textContent = prefix + Math.floor(current) + suffix;
+        }, stepTime);
+    }
+
+    // Intersection Observer for Counter Animation
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                entry.target.classList.add('counted');
+                animateCounter(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    // Observe all stat numbers with data-target attribute
+    document.querySelectorAll('.stat-number[data-target]').forEach(stat => {
+        counterObserver.observe(stat);
+    });
+
+    // Progress Bar Animation
+    const progressObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                const progressFill = entry.target;
+                const targetProgress = progressFill.getAttribute('data-progress');
+                progressFill.classList.add('animated');
+                
+                // Animate width
+                setTimeout(() => {
+                    progressFill.style.width = targetProgress + '%';
+                }, 100);
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    // Observe all progress bars
+    document.querySelectorAll('.progress-fill').forEach(bar => {
+        progressObserver.observe(bar);
+    });
 
     // Tab functionality for practice pages
     const tabButtons = document.querySelectorAll('.tab-btn');
